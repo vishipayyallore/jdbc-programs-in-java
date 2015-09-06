@@ -1,0 +1,15 @@
+package com.jdbc.day1.classes;
+
+/**
+ * 
+ * @author Viswanatha
+ *
+ */
+
+public class SqlServerDemo extends DataStoreDemo {
+
+	public SqlServerDemo(String propertiesFileName){
+		
+	}
+	
+}

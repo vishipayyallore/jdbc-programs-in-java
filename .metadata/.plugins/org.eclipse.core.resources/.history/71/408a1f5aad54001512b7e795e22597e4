@@ -1,0 +1,39 @@
+package com.jdbc.day1.classes;
+
+import com.jdbc.day1.utilities.*;
+
+/**
+ * 
+ * @author Viswanatha
+ *
+ */
+
+public class MySqlDemo {
+
+	//Variables.
+	private String _propertiesFileName;
+	private DataStoreCommunicator _datastoreCommunicator;
+	
+	/**
+	 * 
+	 * @param propertiesFileName
+	 */
+	public MySqlDemo(String propertiesFileName){
+		_propertiesFileName = propertiesFileName;
+		_datastoreCommunicator = new DataStoreCommunicator(propertyFileName);
+	}
+	
+	/**
+	 * 
+	 * @param propertiesFileName
+	 * @param sqlQuery
+	 */
+	public void getDataFromStore(String sqlQuery){
+		
+	}
+	
+	public void displayData(){
+		
+	}
+	
+}

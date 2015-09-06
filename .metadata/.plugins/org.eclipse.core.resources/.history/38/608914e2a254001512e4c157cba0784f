@@ -1,0 +1,17 @@
+package com.utilities.datastore.connection;
+
+import java.sql.Connection;
+
+/**
+ * 
+ * @author Viswanatha
+ *
+ */
+
+public class Manager {
+
+	//Variables
+	private String propertyFileName;
+	private Connection _datastoreConnection;
+	
+}

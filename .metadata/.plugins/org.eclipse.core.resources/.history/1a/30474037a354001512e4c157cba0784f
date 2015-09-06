@@ -1,0 +1,30 @@
+package com.utilities.datastore.connection;
+
+import java.io.FileNotFoundException;
+import java.sql.Connection;
+import com.utilities.datastore.configuration.*;
+
+/**
+ * 
+ * @author Viswanatha
+ *
+ */
+
+public class Manager {
+
+	//Variables
+	private String propertyFileName;
+	private Connection _datastoreConnection;
+	private ConfigurationReader _configurationReader;
+	
+	public Manager(String propertyFileName) throws FileNotFoundException{
+		
+		//
+		_configurationReader = new ConfigurationReader(propertyFileName)
+				.readDataStoreProperties();
+	}
+	
+	
+	
+	
+}

@@ -1,0 +1,3 @@
+#MySQL Connection Properties.
+mySqlDriverName="org.gjt.mm.mysql.Driver"
+connectionUrl = "jdbc:mysql://localhost:3306/world?user=root&password=sample123$"

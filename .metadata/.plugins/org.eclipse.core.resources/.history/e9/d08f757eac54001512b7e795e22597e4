@@ -1,0 +1,26 @@
+package com.jdbc.day1.classes;
+
+/**
+ * 
+ * @author Viswanatha
+ *
+ */
+
+public class MySqlDemo {
+
+	//Variables.
+	private String _propertiesFileName;
+	
+	public MySqlDemo(String propertiesFileName){
+		_propertiesFileName = propertiesFileName;
+	}
+	
+	public void getDataFromStore(String propertiesFileName, String sqlQuery){
+	
+	}
+	
+	public void displayData(){
+		
+	}
+	
+}

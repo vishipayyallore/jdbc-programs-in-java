@@ -1,0 +1,17 @@
+package com.jdbc.day1.classes;
+
+import java.io.IOException;
+
+/**
+ * 
+ * @author Viswanatha
+ *
+ */
+
+public class SqlServerDemo extends DataStoreDemo {
+
+	public SqlServerDemo(String propertiesFileName) throws ClassNotFoundException, IOException{
+		super(propertiesFileName);
+	}
+	
+}

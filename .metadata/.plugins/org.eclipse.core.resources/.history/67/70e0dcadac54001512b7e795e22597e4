@@ -1,0 +1,72 @@
+package com.jdbc.day1.utilities;
+
+import java.util.*;
+
+import com.utilities.datastore.connection.Manager;
+
+import java.io.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+
+/**
+ * 
+ * @author Viswanatha
+ *
+ */
+
+public class DataStoreCommunicator {
+	
+	//Data Store Variables.
+	Manager _datastoreManager;
+	Connection _datastoreConnection;
+	ResultSet _resultSet;
+	
+	/**
+	 * 
+	 * @param propertyFileName
+	 * @throws FileNotFoundException
+	 */
+	public DataStoreCommunicator(String propertyFileName) throws FileNotFoundException{
+		inputStream = getClass().getClassLoader().getResourceAsStream(propertyFileName);
+		if (inputStream == null){
+			throw new FileNotFoundException( String.format( "Property file '{0}' not found in the classpath", propertyFileName) );
+		}
+		_properties = new Properties();
+	}
+	
+	/**
+	 * 
+	 * @throws IOException
+	 */
+	public void readDataStoreProperties() throws IOException{
+		_properties.load(inputStream);
+		System.out.printf("\n\nLoaded the properties file.");
+		
+		_driverName = _properties.getProperty("DriverName");
+		_connectionString = _properties.getProperty("ConnectionUrl");
+		
+		_connectionString = String.format(_connectionString, 
+				_properties.getProperty("ServerInformation"),
+				_properties.getProperty("Database"),
+				_properties.getProperty("UserName"),
+				_properties.getProperty("Password"));
+	}
+	
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public String getDriverName(){
+		return _driverName;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public String getConnectionUrl(){
+		return _connectionString;
+	}
+	
+}

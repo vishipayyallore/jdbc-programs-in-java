@@ -1,0 +1,17 @@
+package com.utilities.datastore.interfaces;
+
+import java.sql.*;
+
+/**
+ * 
+ * @author Viswanatha
+ *
+ */
+
+public interface IManager {
+
+	
+	Connection createConnection();
+	void closeConnection();
+	
+}

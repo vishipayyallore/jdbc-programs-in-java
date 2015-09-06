@@ -1,0 +1,14 @@
+package com.jdbc.day1.utilities;
+
+import java.sql.*;
+
+public class DisplayData {
+
+	public void displayData(ResultSet _resultSet){
+		// Iterate through the data in the result set and display it.
+		while (rs.next()) {
+			System.out.println(rs.getString(1) + " " + rs.getString(2) + " " + rs.getString(3));
+		}
+	}
+	
+}

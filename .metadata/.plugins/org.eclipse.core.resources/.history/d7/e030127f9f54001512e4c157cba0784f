@@ -1,0 +1,38 @@
+package com.jdbc.day1.utilities;
+
+import java.util.*;
+import java.io.*;
+
+/**
+ * 
+ * @author Viswanatha
+ *
+ */
+
+public class DataStoreConfiguration {
+	
+	//Variables.
+	//private String propertyFileName;
+	private InputStream inputStream;
+	private Properties _properties;
+	
+	public DataStoreConfiguration(String propertyFileName) throws FileNotFoundException{
+		//this.propertyFileName = propertyFileName;
+		inputStream = getClass().getClassLoader().getResourceAsStream(propertyFileName);
+		if (inputStream == null){
+			throw new FileNotFoundException( String.format( "Property file '{0}' not found in the classpath", propertyFileName) );
+		}
+		_properties = new Properties();
+	}
+	
+	public void readMySQLProperties() throws IOException{
+		_properties.load(inputStream);
+			System.out.printf("\n\nLoaded the properties file.");
+			for(Object propertyName : prop.values() ){
+				System.out.println("\n\n" + propertyName.toString());
+			}
+		
+
+	}
+	
+}

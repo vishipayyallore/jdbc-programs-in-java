@@ -1,0 +1,4 @@
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:HelloJdbcMainCls
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:HelloJdbcMainCls/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:HelloJdbcMainCls/activeLaunchTarget=org.eclipse.remote.LocalServices\:Local

@@ -1,0 +1,3 @@
+#MySQL Connection Properties.
+mySqlDriverName="org.gjt.mm.mysql.Driver"
+

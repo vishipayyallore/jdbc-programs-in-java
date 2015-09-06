@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.utilities.datastore.configuration.DataStoreConfiguration"/>
+<fullyQualifiedTypeName name="com.utilities.datastore.configuration.ConfigurationReader"/>
+<fullyQualifiedTypeName name="com.utilities.datastore.interfaces.IManager"/>
+<fullyQualifiedTypeName name="java.sql.DriverManager"/>
+<fullyQualifiedTypeName name="com.utilities.datastore.communications.Communicator"/>
+<fullyQualifiedTypeName name="com.jdbc.day1.utilities.DisplayData"/>
+<fullyQualifiedTypeName name="com.jdbc.day1.utilities.DataStoreCommunicator"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,50 @@
+package com.jdbc.day1.classes;
+
+import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import com.jdbc.day1.utilities.*;
+
+/**
+ * 
+ * @author Viswanatha
+ *
+ */
+
+public class MySqlDemo {
+
+	//Variables.
+	private DataStoreCommunicator _datastoreCommunicator;
+	private ResultSet _resultSet;
+	
+	/**
+	 * 
+	 * @param propertiesFileName
+	 * @throws IOException 
+	 * @throws ClassNotFoundException 
+	 */
+	public MySqlDemo(String propertiesFileName) throws ClassNotFoundException, IOException{
+		super(propertiesFileName);
+	}
+	
+	/**
+	 * 
+	 * @param propertiesFileName
+	 * @param sqlQuery
+	 * @throws SQLException 
+	 */
+	public MySqlDemo getDataFromStore(String sqlQuery) throws SQLException{
+		_resultSet = _datastoreCommunicator.getData(sqlQuery);
+		return this;
+	}
+	
+	/**
+	 * @throws SQLException 
+	 * 
+	 */
+	public MySqlDemo displayData() throws SQLException{
+		DisplayData.displayData(_resultSet);
+		return this;
+	}
+	
+}

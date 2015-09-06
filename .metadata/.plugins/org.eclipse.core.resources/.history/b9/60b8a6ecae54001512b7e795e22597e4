@@ -1,0 +1,23 @@
+package com.jdbc.day1.classes;
+
+import java.io.*;
+import java.sql.*;
+import com.jdbc.day1.utilities.DataStoreCommunicator;
+
+/**
+ * 
+ * @author Viswanatha
+ *
+ */
+
+public class DataStoreDemo {
+
+	//Variables.
+	private DataStoreCommunicator _datastoreCommunicator;
+	private ResultSet _resultSet;
+	
+	public DataStoreDemo(String propertiesFileName) throws ClassNotFoundException, IOException {
+		_datastoreCommunicator = new DataStoreCommunicator(propertiesFileName);
+	}
+	
+}

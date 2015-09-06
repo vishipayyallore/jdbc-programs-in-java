@@ -1,0 +1,64 @@
+package com.utilities.datastore.configuration;
+
+import java.io.*;
+import java.util.*;
+
+public class ConfigurationReader {
+	
+	//Variables.
+	private InputStream inputStream;
+	private Properties _properties;
+	private String _driverName;
+	private String _connectionString;
+	
+	/**
+	 * 
+	 * @param propertyFileName
+	 * @throws FileNotFoundException
+	 */
+	public ConfigurationReader(String propertyFileName) throws FileNotFoundException{
+		inputStream = getClass().getClassLoader().getResourceAsStream(propertyFileName);
+		if (inputStream == null){
+			throw new FileNotFoundException( String.format( "Property file '{0}' not found in the classpath", propertyFileName) );
+		}
+		_properties = new Properties();
+	}
+	
+	/**
+	 * 
+	 * @throws IOException
+	 */
+	public ConfigurationReader readDataStoreProperties() throws IOException{
+		_properties.load(inputStream);
+		System.out.printf("\n\nLoaded the properties file.");
+		
+		_driverName = _properties.getProperty("DriverName");
+		String connectionInformation = _properties.getProperty("ConnectionUrl");
+		String serverInformation = _properties.getProperty("ServerInformation");
+		_connectionString = String.format("jdbc:mysql:{0}{1}?user={2}&password={3}", 
+				serverInformation,
+				"A",
+				"b",
+				"n");
+		
+		return this;
+	}
+	
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public String getDriverName(){
+		return _driverName;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public String getConnectionUrl(){
+		return _connectionString;
+	}
+	
+}
