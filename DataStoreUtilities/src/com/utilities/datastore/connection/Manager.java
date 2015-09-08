@@ -15,7 +15,7 @@ import com.utilities.datastore.interfaces.*;
 public class Manager implements IManager {
 
 	//Variables
-	private Connection _datastoreConnection;
+	private Connection _datastoreConnection = null;
 	private ConfigurationReader _configurationReader;
 	
 	/**
@@ -27,17 +27,17 @@ public class Manager implements IManager {
 	public Manager(String propertyFileName) throws IOException, ClassNotFoundException{
 		_configurationReader = new ConfigurationReader(propertyFileName)
 				.readDataStoreProperties();
-		try{
-				//Loading the Driver Class.
-				Class.forName(_configurationReader.getDriverName());
-		} catch (ClassNotFoundException e) {
-			System.out.println(e.toString());
-		}
 	}
 
 	@Override
 	public Connection getConnection() throws SQLException {
 		if(_datastoreConnection == null){
+			try{
+				//Loading the Driver Class.
+				Class.forName(_configurationReader.getDriverName());
+			} catch (ClassNotFoundException e) {
+				System.out.println(e.toString());
+			}
 			_datastoreConnection = DriverManager.getConnection(_configurationReader.getConnectionUrl());
 		}
 		return _datastoreConnection;

@@ -34,7 +34,6 @@ public class ConfigurationReader {
 		
 		_driverName = _properties.getProperty("DriverName");
 		_connectionString = _properties.getProperty("ConnectionUrl");
-		
 		_connectionString = String.format(_connectionString, 
 				_properties.getProperty("ServerInformation"),
 				_properties.getProperty("Database"),
