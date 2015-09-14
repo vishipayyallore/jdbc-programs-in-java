@@ -1,7 +1,0 @@
-#MySQL Connection Properties.
-DriverName=org.gjt.mm.mysql.Driver
-ConnectionUrl=jdbc:mysql://%s/%s?user=%s&password=%s
-ServerInformation=localhost:3306
-Database=world
-UserName=root
-Password=sample123$

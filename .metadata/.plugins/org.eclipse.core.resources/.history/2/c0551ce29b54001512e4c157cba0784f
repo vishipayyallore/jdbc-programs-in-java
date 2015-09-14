@@ -1,5 +1,0 @@
-#MySQL Connection Properties.
-DriverName="org.gjt.mm.mysql.Driver"
-ConnectionUrl="jdbc:mysql://localhost:3306/world?user=root&password=sample123$"
-UserName=""
-Password=""
